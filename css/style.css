@@ -1,0 +1,70 @@
+body{
+    margin: 2% 10% 0% 10%;
+    background-color:lightslategrey;
+    height: 100%;
+}
+.banner{
+    background-image: url('../images/banner.jpg');
+    background-repeat: repeat-x;
+}
+.profilepic{
+    border-radius: 50%;
+    height: 2%;
+}
+section{
+    background-color:lightblue;
+    margin-top: -3%;
+    height: 100%;
+}
+.homepage div h1 {
+    color: black;
+    font-size: 3em;
+    
+}
+.homepage div ul{
+    list-style-type: none;
+}
+.homepage div ul li a{
+    background-color: #1c87c9;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 1px;
+    cursor: pointer;
+    width: 10%;
+}
+.aboutmepage{
+    margin-top: -1%;
+    
+}
+.aboutmepage div{
+    margin-left: 3%;
+}
+.aboutmepage div h1,h2,h3,h4,h5,h6{
+    color:midnightblue;
+    font-style: italic;
+}
+.aboutmepage div h1{
+    font-size: 3em;
+}
+.aboutmepage p b{
+    color:rgb(151, 14, 151);
+} 
+.aboutmepage div img{
+    width: 200px;
+}
+.aboutmepage div ol li em{
+    color: darkred;
+}
+footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:lightsteelblue;
+    text-align: left;
+    margin-top: -1%;
+ }
