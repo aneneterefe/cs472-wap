@@ -1,0 +1,221 @@
+/*author: Anene*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+section,
+footer {
+    margin: 0;
+    padding: 1px; 
+}
+header{
+    background-color:rgb(51, 81, 119);
+    position: relative;
+    
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+    background-color:rgb(51, 81, 119);
+    height: 15%;
+}
+#header{
+    height: 82px;
+    text-align: right;
+    color:#bbbdbf;
+    font-size: 0.8em;
+}
+#header h1{
+    text-align: left;
+    font-size: 3em;
+}
+h1 a{
+    color: white;
+    padding-right: 5%;
+}
+#homelink{
+    font-size: 1.5em;
+    color:white;
+    padding-right: 5px;
+    text-decoration: none;
+}
+/*-----------Solution-1-----------------*/
+#outer {
+    border: 2px dashed black;
+    padding: 10px;
+    overflow: hidden;
+}  
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: 10px;
+    float: left;
+    
+}
+#newline{
+    clear: left;
+}
+/*-----------End of Solution-1-----------------*/
+
+/*-----------Solution-2-----------------*/
+ul{
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+}
+ul li{
+    background-color: white;
+    display: inline;
+    font-size: 2em;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px;
+    
+}
+/*-----------End of Solution-2-----------------*/
+
+/*-----------Solution-3-------------------------*/
+#content_3{
+    background-color: lightgray;
+    overflow: hidden;
+    padding: 10px;
+    width: 50%;
+    margin-left: 20%;
+    margin-right: 10%;
+    height: 600px;
+}
+#content_3 h1{
+    background-color: yellow;
+}
+.col{
+    background-color: lightblue;
+    float: right;
+    margin-left: 10px;
+    width: 100px;
+}
+/*-----------End of Solution-3-----------------*/
+
+/*-----------Solution-4.1-------------------------*/
+.content_4_1{
+    overflow:scroll;
+    padding: 10px;
+    width: 30%;
+    height: 300px;
+    float: left;
+    margin-right: 20px;
+}
+#a, #b {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a { background-color: lightblue; float:left }
+  #b { background-color: pink; float:right}
+  #c { background-color: lightgray; }
+  
+  #a2, #b2 {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a2 { background-color: lightblue; float: left;}
+  #b2 { background-color: pink; float: right; clear:left;}
+  #c2 { background-color: lightgray;}
+
+  #a3, #b3 {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a3 { background-color: lightblue;}
+  #b3 { background-color: pink; float: right; clear:left}
+  #c3 { background-color: lightgray;text-align: right; }
+ 
+/*-----------End of Solution-4.1-----------------*/
+
+/*-----------Solution-4.2-------------------------*/
+
+#a4, #b4 {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a4 { background-color: lightblue; float:left }
+  #b4 { background-color: pink; float:right;clear: left;}
+  #c4 { background-color: lightgray; text-align: right; margin-left: auto; margin-right: auto;width: 50%;}
+  
+  #a5, #b5 {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a5 { background-color: lightblue; float: right;}
+  #b5 { background-color: pink; float: left;}
+  #c5 { background-color: lightgray;float:left;text-align: center; width: 50%;}
+
+  #a6, #b6 {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a6 { background-color: lightblue; float:right}
+  #b6 { background-color: pink; position:fixed; margin-top: 3%; margin-left: 19%;}
+  #c6 { background-color: lightgray;text-align: center; float: left; clear: right; width:70%; }
+ 
+/*-----------End of Solution-4.2-----------------*/
+
+/*-----------Solution-4.3-------------------------*/
+
+#a7, #b7 {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a7 { background-color: lightblue;float: left;}
+  #b7 { background-color: pink; float:left;}
+  #c7 { background-color: lightgray; float: left; width: 60%;}
+  
+  #a8, #b8 {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a8 { background-color: lightblue; }
+  #b8 { background-color:transparent; position: fixed;}
+  #c8 { background-color: lightgray;float: left; }
+
+  #a9, #b9 {
+    width: 100px;
+    height: 100px;
+    font: 30pt bold Helvetica, Arial, sans-serif;
+    line-height: 100px;
+    text-align: center;
+  }
+  #a9 { background-color: lightblue;float:left }
+  #b9 { background-color: pink; float:left}
+  #c9 { background-color: lightgray; margin-top: 200px; }
+ 
+/*-----------End of Solution-4.3-----------------*/
