@@ -172,13 +172,13 @@ ul li{
 
   #a6, #b6 {
     width: 100px;
-    height: 100px;
+    max-height: 100px;
     font: 30pt bold Helvetica, Arial, sans-serif;
     line-height: 100px;
     text-align: center;
   }
   #a6 { background-color: lightblue; float:right}
-  #b6 { background-color: pink; position:fixed; margin-top: 3%; margin-left: 19%;}
+  #b6 { background-color: pink; position:relative; top: 19%; left: 66%;}
   #c6 { background-color: lightgray;text-align: center; float: left; clear: right; width:70%; }
  
 /*-----------End of Solution-4.2-----------------*/
