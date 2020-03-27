@@ -94,10 +94,6 @@ dd ul{
 img[alt="Critic"]{
     float:none;
 }
-
-p:has(br){
-    background-color: black;
-}
 #paging{
     background-color: #A2B964;
     padding:5px;
