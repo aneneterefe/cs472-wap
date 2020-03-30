@@ -4,6 +4,9 @@ function submitForm1(){
     console.log("password="+document.getElementById("exampleInputPassword1").value);
     console.log("Url="+document.getElementById("url").value);
     console.log("Checked="+document.getElementById("exampleCheck1").checked);
+    let form = document.getElementById("form1");
+    function handleForm(event) { event.preventDefault(); } 
+    form.addEventListener('submit', handleForm);
 }
 
 function popmessage(){
