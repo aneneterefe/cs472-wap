@@ -214,7 +214,7 @@ window.onload = function(){
             return "11) Error:"+ nums+" is not array";
         }
     }
-    document.getElementById("11_1").innerHTML=multiply_functional([1,2,3]);
+    document.getElementById("11_2").innerHTML=multiply_functional([1,2,3]);
 
     //question 12
     let findSecondBiggest=(nums)=>{
