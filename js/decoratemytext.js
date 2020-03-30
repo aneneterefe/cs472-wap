@@ -33,8 +33,35 @@ window.onload = function(){
         }
     };
 
-    
-    
+    document.getElementById("converter").onclick=function(){
+        let input= document.getElementById("letter").value;
+        if(input!==""||input!=="undefined"){
+            let vowels=['a','e','i','o','u','A','E','I','O','U'];
+            let char=input.charAt(0);
+            if(!vowels.includes(char)){
+                input=input.substr(1);
+                input=input+char+"-ay";
+                document.getElementById("output").innerHTML=input;
+            }else{
+                input=input+"-ay";
+                document.getElementById("output").innerHTML=input;
+            }
+        }
+    }
 
+    document.getElementById("letter2").oninput=function(){
+        let input= document.getElementById("letter2").value;
+        if(input!==""||input!=="undefined"){
+            if(input.length>=5){
+                document.getElementById("letter2").value="Malkovich";
+            }else{
+                document.getElementById("letter2").value=input;
+            }
+        }
+    }
+
+    document.getElementById("malk").onclick=function(){
+        document.getElementById("letter2").value="";
+    }
 
 }
