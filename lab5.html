@@ -209,7 +209,7 @@
                             <td>                                
                                 <pre><code>    let computeSumOfSquares=(nums)=>{
         if(Array.isArray(nums)){
-            const result=nums.map((val)=>{return val*val}).reduce((prev, current, index) =>{
+            const result=nums.map((val)=>{return val*val}).reduce((prev, current) =>{
                 return prev+current;
             });
             return "8) The sum of square of array "+nums.toString()+" is = "+ result;
@@ -241,7 +241,7 @@
                             <td>                                
                                 <pre><code>    let computeSumOfSquaresOfEvensOnly=(nums)=>{
         if(Array.isArray(nums)){
-            const result=nums.filter((val)=>{if(val%2===0) return val;}).map((val)=>{return val*val}).reduce((prev,current,index)=>{ return prev+current});
+            const result=nums.filter((val)=>{if(val%2===0) return val;}).map((val)=>{return val*val}).reduce((prev,current)=>{ return prev+current});
             return "10) The sum of squared even number of the arrays "+nums.toString()+" is = "+ result;
         }else{
             return "9) Error: wrong input formats";
@@ -257,7 +257,7 @@
                                 <pre><code>    let sum_functional=(nums)=>{
         if(Array.isArray(nums)){
             if(!nums.some(isNaN)){
-                const sum=nums.reduce((prev,current,index)=>{ return prev+current;});
+                const sum=nums.reduce((prev,current)=>{ return prev+current;});
                 return "11) The Sum of the array "+nums.toString()+" is = "+sum;
             }else{
                 return "11) Error: Array contains non numeric value";    
@@ -277,7 +277,7 @@
                                 <pre><code>    let multiply_functional=(nums)=>{
         if(Array.isArray(nums)){
             if(!nums.some(isNaN)){
-                const mul=nums.reduce((prev,current,index)=>{ return prev*current;});
+                const mul=nums.reduce((prev,current)=>{ return prev*current;});
                 return "11) The Multiply of the array "+nums.toString()+" is= "+mul;
             }else{
                 return "11) Error: Array contains non numeric value";    
@@ -401,7 +401,7 @@ function popmessage(){
         s = modifyTime(s);
         document.getElementById( 'clock1' ).innerHTML = y+ "-" +mm+ "-" +d+" "+ h + ":" + m + ":" + s;
         document.getElementById( 'clock2' ).innerHTML = y+ "-" +mm+ "-" + d+" "+ h + ":" + m + ":" + s;    
-        let t = setTimeout(function() {
+        setTimeout(function() {
             clock()
         }, 500);
     }
@@ -417,6 +417,8 @@ function popmessage(){
     </main>
     <footer>
         <a id="homelink" href="https://mumane.github.io/cs472-wap/"> Home</a>
+        <a href="https://validator.w3.org/check/referer"> <img src="images/w3c-html.png" alt="html validator"/></a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer"> <img src="images/w3c-css.png" alt="css validator"/></a>
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

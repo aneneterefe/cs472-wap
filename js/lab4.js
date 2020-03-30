@@ -1,22 +1,29 @@
-function submitForm1(){
-    console.log("Entered inputs:");
-    console.log("email="+document.getElementById("exampleInputEmail1").value);
-    console.log("password="+document.getElementById("exampleInputPassword1").value);
-    console.log("Url="+document.getElementById("url").value);
-    console.log("Checked="+document.getElementById("exampleCheck1").checked);
-    let form = document.getElementById("form1");
-    function handleForm(event) { event.preventDefault(); } 
-    form.addEventListener('submit', handleForm);
-}
+/* eslint-disable no-console */
+/* Author Anene */
+/* file lab4.js */
+window.onload = function(){
+    "use strict";
 
-function popmessage(){
-    confirm(
-        "Entered inputs:\n"+
-        "Product Number="+document.getElementById("productNumber").value+"\n"+
-        "Name="+document.getElementById("name").value+"\n"+
-        "Unit Price="+document.getElementById("unitPrice").value+"\n"+
-        "Quantity="+document.getElementById("quantity").value+"\n"+
-        "Supplier="+document.getElementById("supplier").value+"\n"+
-        "Date Supplied="+document.getElementById("dateSupplied").value+"\n"
-    );
+    document.getElementById("form1btn").onclick = function(){
+        console.log("Entered inputs:");
+        console.log("email="+document.getElementById("exampleInputEmail1").value);
+        console.log("password="+document.getElementById("exampleInputPassword1").value);
+        console.log("Url="+document.getElementById("url").value);
+        console.log("Checked="+document.getElementById("exampleCheck1").checked);
+        let form = document.getElementById("form1");
+        function handleForm(event) { event.preventDefault(); } 
+        form.addEventListener('submit', handleForm);
+    }
+
+    document.getElementById("form2btn").onclick = function(){
+        // eslint-disable-next-line no-alert
+        confirm(
+            "Entered inputs:\n"+
+            "Product Number="+document.getElementById("productNumber").value+"\n"+
+            "Name="+document.getElementById("name").value+"\n"+
+            "Unit Price="+document.getElementById("unitPrice").value+"\n"+
+            "Quantity="+document.getElementById("quantity").value+"\n"+
+            "Supplier="+document.getElementById("supplier").value+"\n"+
+            "Date Supplied="+document.getElementById("dateSupplied").value+"\n")
+    }
 }

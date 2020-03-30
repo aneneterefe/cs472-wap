@@ -57,74 +57,41 @@
         <div>
             <h1>Solution</h1>
             <pre><code>
+/* eslint-disable no-console */
 /* Author Anene */
-/* file decoratemytext.js */
+/* file lab4.js */
 window.onload = function(){
     "use strict";
-    
-    document.getElementById("biggerdecoration").onclick = function makebig() {
-        
-        let font=document.getElementById("text").style.fontSize;
-        let fontnumber=parseInt(font)+2;
-        let type= font.replace(/[0-9]/g, '')
-        document.getElementById("text").style.fontSize=fontnumber+type;
-        let t = setInterval(function() {
-            makebig()
-        }, 500);
-    };
-    
 
-    document.getElementById("bling").onchange=function(){
-        let checked=document.getElementById("bling").checked;
-        let text=document.getElementById("text");
-        if(checked===true){
-            text.style.fontWeight="bold";
-            text.style.color="green";
-            text.style.textDecoration="underline";
-            document.body.style.backgroundImage="url('http://www.cs.washington.edu/education/courses/190m/CurrentQtr/labs/6/hundred-dollar-bill.jpg')";
-            
-        }else{
-            text.style.fontWeight="normal";
-            text.style.color="black";
-            text.style.textDecoration="none";
-            document.body.style.backgroundImage="url()";
-            
-        }
-    };
-
-    document.getElementById("converter").onclick=function(){
-        let input= document.getElementById("letter").value;
-        if(input!==""||input!=="undefined"){
-            let vowels=['a','e','i','o','u','A','E','I','O','U'];
-            let char=input.charAt(0);
-            if(!vowels.includes(char)){
-                input=input.substr(1);
-                input=input+char+"-ay";
-                document.getElementById("output").innerHTML=input;
-            }else{
-                input=input+"-ay";
-                document.getElementById("output").innerHTML=input;
-            }
-        }
+    document.getElementById("form1btn").onclick = function(){
+        console.log("Entered inputs:");
+        console.log("email="+document.getElementById("exampleInputEmail1").value);
+        console.log("password="+document.getElementById("exampleInputPassword1").value);
+        console.log("Url="+document.getElementById("url").value);
+        console.log("Checked="+document.getElementById("exampleCheck1").checked);
+        let form = document.getElementById("form1");
+        function handleForm(event) { event.preventDefault(); } 
+        form.addEventListener('submit', handleForm);
     }
 
-    document.getElementById("letter2").oninput=function(){
-        let input= document.getElementById("letter2").value;
-        if(input!==""||input!=="undefined"){
-            if(input.length>=5){
-                document.getElementById("letter2").value="Malkovich";
-            }else{
-                document.getElementById("letter2").value=input;
-            }
-        }
+    document.getElementById("form2btn").onclick = function(){
+        // eslint-disable-next-line no-alert
+        confirm(
+            "Entered inputs:\n"+
+            "Product Number="+document.getElementById("productNumber").value+"\n"+
+            "Name="+document.getElementById("name").value+"\n"+
+            "Unit Price="+document.getElementById("unitPrice").value+"\n"+
+            "Quantity="+document.getElementById("quantity").value+"\n"+
+            "Supplier="+document.getElementById("supplier").value+"\n"+
+            "Date Supplied="+document.getElementById("dateSupplied").value+"\n")
     }
-
-    document.getElementById("malk").onclick=function(){
-        document.getElementById("letter2").value="";
-    }
-
 }                
             </code></pre>
         </div>
+        <footer>
+            <a id="homelink" href="https://mumane.github.io/cs472-wap/"> Home</a>
+            <a href="https://validator.w3.org/check/referer"> <img src="images/w3c-html.png" alt="html validator"/></a>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer"> <img src="images/w3c-css.png" alt="css validator"/></a>
+        </footer>
 	</body>
 </html>

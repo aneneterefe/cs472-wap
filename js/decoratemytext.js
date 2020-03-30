@@ -3,17 +3,20 @@
 window.onload = function(){
     "use strict";
     
-    document.getElementById("biggerdecoration").onclick = function makebig() {
-        
+    function makebig(){
         let font=document.getElementById("text").style.fontSize;
+        // eslint-disable-next-line radix
         let fontnumber=parseInt(font)+2;
+        // eslint-disable-next-line require-unicode-regexp
         let type= font.replace(/[0-9]/g, '')
         document.getElementById("text").style.fontSize=fontnumber+type;
-        let t = setInterval(function() {
+        
+    }
+    document.getElementById("biggerdecoration").onclick = function(){
+        setInterval(function() {
             makebig()
         }, 500);
     };
-    
 
     document.getElementById("bling").onchange=function(){
         let checked=document.getElementById("bling").checked;
@@ -43,7 +46,7 @@ window.onload = function(){
                 input=input+char+"-ay";
                 document.getElementById("output").innerHTML=input;
             }else{
-                input=input+"-ay";
+                input+="-ay";
                 document.getElementById("output").innerHTML=input;
             }
         }
