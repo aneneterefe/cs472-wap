@@ -12,23 +12,28 @@ window.onload = function(){
             if(num1<num2){
                 large=num2;
             }
-            return "1) The largest is of "+num1+" and"+ num2+" is= "+large;
+            return "1) The largest of "+num1+" and "+ num2+" is= "+large;
         }else{
-            return "1) Is not a number";
+            return "1) input is not a number";
         }    
     }
-    console.log(max(10,5));
+    document.getElementById("1").innerHTML=max(10,4);
 
     //question 2
     let maxOfThree=(num1, num2,num3)=>{
         if(!(isNaN(num1)&&isNaN(num2)&&isNaN(num3))){
-            let large=Math.max(num1,num2,num3);
-            return "2) The largest is of "+num1+", "+num2+" and"+ num3+" is= "+large;
+            let large=num1;
+            if(large<num2 && num3<num2){
+                large=num2;
+            }else if(large<num3 && num2<num3){
+                large=num3
+            }
+            return "2) The largest of "+num1+", "+num2+" and "+ num3+" is= "+large;
         }else{
             return "2) Is not a number";
         }
     }
-    console.log(maxOfThree(2,5,1));
+    document.getElementById("2").innerHTML=maxOfThree(2,5,1);
 
     //question 3
     let isVowel=(char)=>{
@@ -48,7 +53,7 @@ window.onload = function(){
             return "3) Error:"+char+"Is a number";
         }
     }
-    console.log(isVowel("A"));
+    document.getElementById("3").innerHTML=isVowel("A");
 
     //question 4 sum
     let sum=(nums)=>{
@@ -67,7 +72,7 @@ window.onload = function(){
             return "4) Error:"+ nums+" is not array";
         }
     }
-    console.log(sum([1,2,3]));
+    document.getElementById("4_1").innerHTML=sum([1,2,3]);
 
     //question 4 multiply
     let multiply=(nums)=>{
@@ -86,7 +91,7 @@ window.onload = function(){
             return "4) Error:"+ nums+" is not array";
         }
     }
-    console.log(multiply([1,2,3]));
+    document.getElementById("4_2").innerHTML=multiply([1,2,3]);
 
     //question 5 
     let reverse=(string)=>{
@@ -104,7 +109,7 @@ window.onload = function(){
             return "5) Error:"+string+"Is a number";
         }
     }
-    console.log(reverse("jag testar"));
+    document.getElementById("5").innerHTML=reverse("jag testar");
 
     //question 6 
     let findLongestWord=(words)=>{
@@ -127,7 +132,7 @@ window.onload = function(){
             return "6) Error:"+ words+" is not array";
         }
     }
-    console.log(findLongestWord(["one","three","four","six"]));
+    document.getElementById("6").innerHTML=findLongestWord(["one","three","four","six"]);
 
     //question 7
     let filterLongWords=(words, i)=>{
@@ -142,7 +147,7 @@ window.onload = function(){
             return "7) Error: wrong input formats";
         }
     }
-    console.log(filterLongWords(["one","three","four","six"],3));
+    document.getElementById("7").innerHTML=filterLongWords(["one","three","four","six"],3);
 
     //question 8
     let computeSumOfSquares=(nums)=>{
@@ -155,7 +160,7 @@ window.onload = function(){
             return "8) Error: wrong input formats";
         }
     }
-    console.log(computeSumOfSquares([1,2,3]));
+    document.getElementById("8").innerHTML=computeSumOfSquares([1,2,3]);
 
     //question 9
     let printOddNumbersOnly=(nums)=>{
@@ -166,7 +171,7 @@ window.onload = function(){
             return "9) Error: wrong input formats";
         }
     }
-    console.log(printOddNumbersOnly([1,2,3]));
+    document.getElementById("9").innerHTML=printOddNumbersOnly([1,2,3]);
 
     //question 10
     let computeSumOfSquaresOfEvensOnly=(nums)=>{
@@ -177,7 +182,7 @@ window.onload = function(){
             return "9) Error: wrong input formats";
         }
     }
-    console.log(computeSumOfSquaresOfEvensOnly([1,2,3]));
+    document.getElementById("10").innerHTML=computeSumOfSquaresOfEvensOnly([1,2,3]);
 
     //question 11 sum with functional programming
     let sum_functional=(nums)=>{
@@ -193,9 +198,9 @@ window.onload = function(){
             return "11) Error:"+ nums+" is not array";
         }
     }
-    console.log(sum_functional([1,2,3]));
+    document.getElementById("11_1").innerHTML=sum_functional([1,2,3]);
 
-    //question 4 multiply with functional programming
+    //question 11 multiply with functional programming
     let multiply_functional=(nums)=>{
         if(Array.isArray(nums)){
             if(!nums.some(isNaN)){
@@ -209,7 +214,7 @@ window.onload = function(){
             return "11) Error:"+ nums+" is not array";
         }
     }
-    console.log(multiply_functional([1,2,3]));
+    document.getElementById("11_1").innerHTML=multiply_functional([1,2,3]);
 
     //question 12
     let findSecondBiggest=(nums)=>{
@@ -233,7 +238,7 @@ window.onload = function(){
             return "12) Error:"+ nums+" is not array";
         }
     }
-    console.log(findSecondBiggest([1,2,3,4,5]));
+    document.getElementById("12").innerHTML=findSecondBiggest([1,2,3,4,5]);
 
     //question 13
     let printFibo=(n,a,b)=>{
@@ -259,7 +264,7 @@ window.onload = function(){
             return "13) Error: incorrect format";
         }
     }
-    console.log(printFibo(10,0,1));
+    document.getElementById("13").innerHTML=printFibo(10,0,1);
 
     function modifyTime(i) {
         if (i < 10) {
@@ -279,7 +284,8 @@ window.onload = function(){
         // add a zero in front of numbers<10
         m = modifyTime(m);
         s = modifyTime(s);
-        document.getElementById('clock').innerHTML = y+"-"+mm+"-"+d+" "+ h + ":" + m + ":" + s;
+        document.getElementById('clock1').innerHTML = y+"-"+mm+"-"+d+" "+ h + ":" + m + ":" + s;
+        document.getElementById('clock2').innerHTML = y+"-"+mm+"-"+d+" "+ h + ":" + m + ":" + s;    
         let t = setTimeout(function() {
             clock()
         }, 500);
