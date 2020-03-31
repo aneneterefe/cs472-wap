@@ -1,4 +1,4 @@
-/* Author Anene */
+/* Author Anene Terefe */
 /* file decoratemytext.js */
 window.onload = function(){
     "use strict";
@@ -39,7 +39,7 @@ window.onload = function(){
     document.getElementById("converter").onclick=function(){
         let input= document.getElementById("letter").value;
         if(input!==""||input!=="undefined"){
-            let vowels=['a','e','i','o','u','A','E','I','O','U'];
+            const vowels=['a','e','i','o','u','A','E','I','O','U'];
             let char=input.charAt(0);
             if(!vowels.includes(char)){
                 input=input.substr(1);
