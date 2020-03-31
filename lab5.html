@@ -8,7 +8,7 @@
     <meta name="keywords" content="HTML, JS, Bootstrap, WAP">
     <link rel="icon" href="images/w3c-html.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
-    <script defer src="js/lab5.js" type="text/javascript"></script>
+    <script defer src="js/lab5.js"></script>
     <title>Lab 5</title>
 </head>
 <body>
@@ -36,7 +36,7 @@
                             <td><pre><code> let max= (num1, num2)=>{ 
         if(!(isNaN(num1)&&isNaN(num2))){
             let large=num1;
-            if(num1 < num2){
+            if(num1 &lt; num2){
                 large=num2;
             }
             return "1) The largest is "+num1+" and "+ num2+" is= "+large;
@@ -53,9 +53,9 @@
                                 <pre><code>    let maxOfThree=(num1, num2,num3)=>{
         if(!(isNaN(num1)&&isNaN(num2)&&isNaN(num3))){
             let large=num1;
-            if(large < num2 && num3 < num2){
+            if(large &lt; num2 && num3 &lt; num2){
                 large=num2;
-            }else if(large < num3 && num2 < num3){
+            }else if(large &lt; num3 && num2 &lt; num3){
                 large=num3
             }
             return "2) The largest is "+num1+", "+num2+" and "+ num3+" is= "+large;
@@ -73,7 +73,7 @@
         if(typeof(char)==="string"){
             if(char.length==1){
                 let vowels=['a','e','i','o','u','A','E','I','O','U'];
-                for(let i=0;i < vowels.length;i++){
+                for(let i=0;i &lt; vowels.length;i++){
                     if(vowels[i] === char){
                         return "3) The character '"+char+"' is a vowel";;
                     }
@@ -97,7 +97,7 @@
         if(Array.isArray(nums)){
             if(!nums.some(isNaN)){
                 let sum=0;
-                for(let i=0;i < nums.length;i++){
+                for(let i=0;i &lt; nums.length;i++){
                     sum+=nums[i];
                 }
                 return "4) The Sum of array "+nums.toString()+" is= "+sum;
@@ -120,7 +120,7 @@
         if(Array.isArray(nums)){
             if(!nums.some(isNaN)){
                 let mul=1;
-                for(let i=0;i < nums.length;i++){
+                for(let i=0;i &lt; nums.length;i++){
                     mul*=nums[i];
                 }
                 return "4) The Multiply of array "+nums.toString()+" is= "+mul;
@@ -166,8 +166,8 @@
             if(words.some(isNaN)){
                 let length=words[0].length;
                 let word=words[0];
-                for(let i=1;i < words.length;i++){
-                    if(length < words[i].length){
+                for(let i=1;i &lt; words.length;i++){
+                    if(length &lt; words[i].length){
                         length=words[i].length;
                         word=words[i];
                     }
@@ -180,7 +180,7 @@
         }else{
             return "6) Error:"+ words+" is not array";
         }
-    }</code></pre></td>
+    } </code></pre></td>
                             <td id="6"></td>
                             
                           </tr>
@@ -191,7 +191,7 @@
                                 <pre><code>    let filterLongWords=(words, i)=>{
         if(Array.isArray(words)&& !isNaN(i)){
             let filtered=[];
-            for(let j=0;j<words.length;j++){
+            for(let j=0;j &lt; words.length;j++){
                 if(words[j].length>i)
                     filtered.push(words[j]);
             }
@@ -199,7 +199,7 @@
         }else{
             return "7) Error: wrong input formats";
         }
-    }</code></pre></td>
+    } </code></pre></td>
                             <td id="7"></td>
                             
                           </tr>
@@ -314,7 +314,7 @@
         }else{
             return "12) Error:"+ nums+" is not array";
         }
-    }</code></pre></td>
+    } </code></pre></td>
                             <td id="12"></td>
                             
                           </tr>
@@ -326,7 +326,7 @@
         if(!isNaN(n)&&!isNaN(a)&&!isNaN(b)){
             let result=[];
             let prev,current;
-            for(let i=0;i< n;i++){
+            for(let i=0;i&lt; n;i++){
                 if(i===0){
                     result.push(a);
                     prev=a;
@@ -382,7 +382,7 @@ function popmessage(){
                             <th scope="row">15</th>
                             <td>                                
                                 <pre><code>     function modifyTime(i) {
-        if (i < 10) {
+        if (i &lt; 10) {
         i = "0" + i;
         }
         return i;
@@ -396,7 +396,7 @@ function popmessage(){
         var h = today.getHours();
         var m = today.getMinutes();
         var s = today.getSeconds();
-        // add a zero in front of numbers<10
+        // add a zero in front of numbers &lt; 10
         m = modifyTime(m);
         s = modifyTime(s);
         document.getElementById( 'clock1' ).innerHTML = y+ "-" +mm+ "-" +d+" "+ h + ":" + m + ":" + s;
@@ -405,7 +405,7 @@ function popmessage(){
             clock()
         }, 500);
     }
-    clock();</code></pre></td>
+    clock(); </code></pre></td>
                             <td>Time: 
                                 <span id="clock2"></span></td>
                             
