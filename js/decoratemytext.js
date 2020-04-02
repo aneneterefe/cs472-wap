@@ -37,7 +37,7 @@ window.onload = function(){
     };
 
     document.getElementById("converter").onclick=function(){
-        clearInterval(makebig);
+        
         let input= document.getElementById("letter").value;
         if(input!==""||input!=="undefined"){
             const vowels=['a','e','i','o','u','A','E','I','O','U'];
