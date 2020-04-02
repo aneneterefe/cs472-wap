@@ -29,7 +29,7 @@ console.log(add7());//14
 console.log(add7());//21 
 
 //Question 10
-const Employee=(function(){ 
+const employee=(function(){ 
     let name; 
     let age; 
     let salary; 
@@ -63,7 +63,7 @@ const Employee=(function(){
   
 console.log("--------------NO 10 Solution--------------")
 
-let emp=Employee;
+let emp=employee;
 emp.setName("Emp Name");
 emp.setAge(26);
 emp.setSalary(5000);
@@ -71,14 +71,14 @@ console.log(emp);
 
 //Question 11
 let address;
-Employee.address=address;
-Employee.setAddress=function(newAddress){
+employee.address=address;
+employee.setAddress=function(newAddress){
 	address=newAddress;
 }
-Employee.getAddress=function(){
+employee.getAddress=function(){
 	return address;
 }
-let emp2=Employee;
+let emp2=employee;
 emp2.setAddress("fairfield");
 console.log("--------------NO 11 Solution--------------")
 console.log(emp2);
