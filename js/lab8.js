@@ -41,9 +41,11 @@ const Employee=(function(){
     }  
     const getName=function(){ 
         return name; 
-    } 
+    }
+    const setSalary=(newSalary)=> salary=newSalary; 
     const increaseSalary=function(percentage){ 
-        return getSalary()*percentage; 
+        const sal=getSalary()*(1+percentage/100);
+        setSalary(sal); 
     } 
     const incrementAge=function(){ 
         return getAge()+1; 
@@ -52,9 +54,7 @@ const Employee=(function(){
         setAge:function(newAge){ 
                         age=newAge; 
                         }, 
-        setSalary:function(newSalary){ 
-                        salary=newSalary; 
-                     },  
+        setSalary:setSalary,  
         setName:function(newName){ 
                         name=newName; 
                      }       
