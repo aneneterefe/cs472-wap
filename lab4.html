@@ -79,7 +79,7 @@
                         <br>
                         <h3>New Product Form</h3>
                     </div>    
-                    <form>
+                    <form id="form2">
                     <div class="form-group row">
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -119,6 +119,9 @@
                             </div>                   
                         </div>
                     </form>
+                    <div id="inputdata">
+
+                    </div>
                 </div>
             </div>    
         </div>    
@@ -128,6 +131,66 @@
         <a href="https://validator.w3.org/check/referer"> <img src="images/w3c-html.png" alt="html validator"/></a>
         <a href="https://jigsaw.w3.org/css-validator/check/referer"> <img src="images/w3c-css.png" alt="css validator"/></a>
     </footer>
+    <div>
+      <div style="float: left;">
+        <h3>Home work 5 JavaScript Solution</h3>
+       <pre><code>
+/* eslint-disable no-console */
+/* Author Anene */
+/* file lab4.js */
+window.onload = function(){
+    "use strict";
+
+    document.getElementById("form1").addEventListener("submit",function(event){
+        event.preventDefault();
+        console.log("Entered inputs:");
+        console.log("email="+document.getElementById("exampleInputEmail1").value);
+        console.log("password="+document.getElementById("exampleInputPassword1").value);
+        console.log("Url="+document.getElementById("url").value);
+        console.log("Checked="+document.getElementById("exampleCheck1").checked);
+    });
+    
+    document.getElementById("form2").addEventListener("submit",function(event){
+        event.preventDefault();
+        confirm(
+            "Entered inputs:\n"+
+            "Product Number="+document.getElementById("productNumber").value+"\n"+
+            "Name="+document.getElementById("name").value+"\n"+
+            "Unit Price="+document.getElementById("unitPrice").value+"\n"+
+            "Quantity="+document.getElementById("quantity").value+"\n"+
+            "Supplier="+document.getElementById("supplier").value+"\n"+
+            "Date Supplied="+document.getElementById("dateSupplied").value+"\n");
+    });
+}          
+        </code></pre>
+      </div>
+      <div>
+        <h3>Home work 9 jquery Solution</h3>
+       <pre><code>
+    $("#form1").submit(function(event){
+        event.preventDefault();
+        console.log("Entered inputs:");
+        console.log("email="+$("#exampleInputEmail1").val());
+        console.log("password="+$("#exampleInputPassword1").val());
+        console.log("Url="+$("#url").val());
+        console.log("Checked="+$("#exampleCheck1").prop("checked"));
+    });
+    
+    $("#form2").submit(function(event){
+        event.preventDefault();
+        $("#inputdata").html(
+            "Entered inputs:<br>"+
+            "Product Number="+$("#productNumber").val()+"<br>"+
+            "Name="+$("#name").val()+"<br>"+
+            "Unit Price="+$("#unitPrice").val()+"<br>"+
+            "Quantity="+$("#quantity").val()+"<br>"+
+            "Supplier="+$("#supplier").val()+"<br>"+
+            "Date Supplied="+$("#dateSupplied").val()+"<br>");
+    });
+                   
+        </code></pre>
+      </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
