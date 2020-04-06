@@ -2,7 +2,7 @@
 /* file decoratemytext.js */
 window.onload = function(){
     "use strict";
-    
+    let myInterval;
     function makebig(){
         let font=document.getElementById("text").style.fontSize;
         // eslint-disable-next-line radix
@@ -13,9 +13,11 @@ window.onload = function(){
         
     }
     document.getElementById("biggerdecoration").onclick = function(){
-        setInterval(function() {
-            makebig()
-        }, 500);
+        myInterval=setInterval(makebig, 1000);
+    };
+
+    document.getElementById("stopbiggerdecoration").onclick = function(){
+        clearInterval(myInterval);
     };
 
     document.getElementById("bling").onchange=function(){
@@ -38,34 +40,34 @@ window.onload = function(){
 
     document.getElementById("converter").onclick=function(){
         
-        let input= document.getElementById("letter").value;
+        let input= document.getElementById("text").value;
         if(input!==""||input!=="undefined"){
             const vowels=['a','e','i','o','u','A','E','I','O','U'];
             let char=input.charAt(0);
             if(!vowels.includes(char)){
                 input=input.substr(1);
                 input=input+char+"-ay";
-                document.getElementById("output").innerHTML=input;
+                document.getElementById("text").value=input;
             }else{
                 input+="-ay";
-                document.getElementById("output").innerHTML=input;
+                document.getElementById("text").value=input;
             }
         }
     }
 
-    document.getElementById("letter2").oninput=function(){
-        let input= document.getElementById("letter2").value;
+    document.getElementById("text").oninput=function(){
+        let input= document.getElementById("text").value;
         if(input!==""||input!=="undefined"){
             if(input.length>=5){
-                document.getElementById("letter2").value="Malkovich";
+                document.getElementById("text").value="Malkovich";
             }else{
-                document.getElementById("letter2").value=input;
+                document.getElementById("text").value=input;
             }
         }
     }
 
     document.getElementById("malk").onclick=function(){
-        document.getElementById("letter2").value="";
+        document.getElementById("text").value="";
     }
 
 }

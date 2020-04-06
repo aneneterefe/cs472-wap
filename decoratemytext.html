@@ -36,24 +36,15 @@
         <div>
             <fieldset>
                 <legend>Decoration</legend>
-                <button id="biggerdecoration">Bigger Decorations!</button><br>
+                <button id="biggerdecoration">Bigger Decorations!</button>
+                <button id="stopbiggerdecoration">Stop Bigger Decorations!</button><br>
                 <input type="checkbox" id="bling" />
                 <label for="bling">Bling</label>
+                <button id="converter">Igpay Atinlay</button>
+                <button id="malk">clear</button>
             </fieldset>
         </div>
-        <div>
-            <fieldset>
-                <legend>Pig Latin</legend>
-                <input type="text" id="letter" placeholder="enter a word" value=""><button id="converter">Igpay Atinlay</button>
-                <span id="output"></span>
-            </fieldset>   
-        </div>
-        <div>
-            <fieldset>
-                <legend>Malkovich</legend>
-                <input type="text" id="letter2" placeholder="enter a word" value=""><button id="malk">clear</button>
-            </fieldset>   
-        </div>
+        
         <div>
             <h1>Solution</h1>
             <pre><code>
@@ -61,7 +52,7 @@
 /* file decoratemytext.js */
 window.onload = function(){
     "use strict";
-    
+    let myInterval;
     function makebig(){
         let font=document.getElementById("text").style.fontSize;
         // eslint-disable-next-line radix
@@ -72,9 +63,11 @@ window.onload = function(){
         
     }
     document.getElementById("biggerdecoration").onclick = function(){
-        setInterval(function() {
-            makebig()
-        }, 500);
+        myInterval=setInterval(makebig, 1000);
+    };
+
+    document.getElementById("stopbiggerdecoration").onclick = function(){
+        clearInterval(myInterval);
     };
 
     document.getElementById("bling").onchange=function(){
@@ -96,34 +89,35 @@ window.onload = function(){
     };
 
     document.getElementById("converter").onclick=function(){
-        let input= document.getElementById("letter").value;
+        
+        let input= document.getElementById("text").value;
         if(input!==""||input!=="undefined"){
             const vowels=['a','e','i','o','u','A','E','I','O','U'];
             let char=input.charAt(0);
             if(!vowels.includes(char)){
                 input=input.substr(1);
                 input=input+char+"-ay";
-                document.getElementById("output").innerHTML=input;
+                document.getElementById("text").value=input;
             }else{
                 input+="-ay";
-                document.getElementById("output").innerHTML=input;
+                document.getElementById("text").value=input;
             }
         }
     }
 
-    document.getElementById("letter2").oninput=function(){
-        let input= document.getElementById("letter2").value;
+    document.getElementById("text").oninput=function(){
+        let input= document.getElementById("text").value;
         if(input!==""||input!=="undefined"){
             if(input.length>=5){
-                document.getElementById("letter2").value="Malkovich";
+                document.getElementById("text").value="Malkovich";
             }else{
-                document.getElementById("letter2").value=input;
+                document.getElementById("text").value=input;
             }
         }
     }
 
     document.getElementById("malk").onclick=function(){
-        document.getElementById("letter2").value="";
+        document.getElementById("text").value="";
     }
 
 }                

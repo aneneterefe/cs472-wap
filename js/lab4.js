@@ -1,9 +1,10 @@
 /* eslint-disable */
 /* Author Anene */
 /* file lab4.js */
-window.onload = function(){
-    "use strict";
+"use strict";
 
+$(document).ready(function(){
+   
     /*document.getElementById("form1").addEventListener("submit",function(event){
         event.preventDefault();
         console.log("Entered inputs:");
@@ -46,4 +47,4 @@ window.onload = function(){
             "Date Supplied="+$("#dateSupplied").val()+"<br>");
     });
 
-}
+});

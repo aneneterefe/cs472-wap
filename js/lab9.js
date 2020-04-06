@@ -1,4 +1,7 @@
+/* eslint-disable */
+/* Author Anene */
 {
+    "use strict";
     //Question 1
     console.log("---------------Q1 Answer------------------------");
     const person={
@@ -15,13 +18,13 @@
     }
     john.setName("John");
     john.setDateOfBirth(new Date("December 10 1998"));
-    console.log("The person's name is "+john.getName());
+    console.log("The person's name is ${john.getName()}");
     console.log(john.getName()+ " was born "+john.getDateOfBirth());
 
     //Question 2
     console.log("---------------Q2 Answer------------------------");
     const employee=Object.create(person);
-    employee.salary=0;
+    employee.salary=0.0;
     employee.setSalary=(sal)=>employee.salary=sal;
     employee.hireDate=new Date();
     employee.doJob=(jobTitle)=>employee.getName()+" is a "+jobTitle+" who earns $"+employee.salary;
