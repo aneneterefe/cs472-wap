@@ -1,0 +1,30 @@
+/*
+* @author Anene Terefe
+* file style.css
+*/
+
+.navbar-brand, .nav-link{
+    color:white!important;
+}
+.container{
+    margin-top: 1%;
+}
+#divList{
+    margin-top: 1%;
+    visibility: hidden;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: none;
+    background-color: lightgray;
+}
+
+#hometext{
+    float: left;
+}
+#hometext img{
+    float: right;
+    clear: both;
+}
