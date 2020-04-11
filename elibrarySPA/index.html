@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contact Form">
+    <meta name="author" content="Anene Terefe">
+    <meta name="keywords" content="HTML, CSS, jquery WAP jsp servlet, ajax">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href = "./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script defer src="js/books.js" ></script>	
+    <title>eLibrary</title>
+</head>
+<body>
+    <header>
+              
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+	<a class="navbar-brand" href="#">The eLibrary &#174;::: a CS472 Demo WebApp project</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active"><a class="nav-link" id="home">Home
+					<span class="sr-only">(current)</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" id="aboutUs">About us</a></li>
+            <li class="nav-item"><a class="nav-link" id="virtualTour">Virtual Tour</a></li>
+            <li class="nav-item"><a class="nav-link" id="books">Books</a></li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">  
+			<span style="color:white"> Welcome Guest</span> 
+		</form>
+	</div>
+</nav>
+
+    </header>
+    <main>
+        <div class="container-fluid" style="padding-top: 2em; width: 70%;">
+            
+        </div>
+        <!-- Modal for add book -->
+        <div class="modal fade" id="addBooksModal" tabindex="-1" role="dialog" aria-labelledby="addBooksModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="addBooksModalLabel">Add New Book</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addForm">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="title">*Book Title</label>
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title" autofocus required>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="isbn">*ISBN</label>
+                                    <input type="text" class="form-control" id="isbn" name="isbn" placeholder="Enter book isbn" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="overdueFee">*Overdue fee per day</label>
+                                    <input type="number" class="form-control" id="overdueFee" name="overdueFee" placeholder="0.00" step="0.01" required aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-muted">Enter a valid decimal amount in dollar and cents no comma</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="publisher">*Publisher</label>
+                                    <input type="text" class="form-control" id="publisher" name="publisher" placeholder="Enter publisher" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="datePublished">*Date Published</label>
+                                    <input type="date" class="form-control" id="datePublished" name="datePublished"  required >
+                               </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                <button type="reset" class="btn btn-outline-warning">Reset</button>
+                <button type="submit" class="btn btn-outline-primary">Save Book</button>
+                </div>
+            </form>
+            </div>
+            </div>
+        </div>
+        <!-- Modal for edit book -->
+        <div class="modal fade" id="editBooksModal" tabindex="-1" role="dialog" aria-labelledby="editBooksModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="editBooksModalLabel">Edit Book<span>(Book ID)</span></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="title">*Book Title</label>
+                                    <input type="text" class="form-control" id="etitle" name="title" placeholder="Enter book title" autofocus required>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="isbn">*ISBN</label>
+                                    <input type="text" class="form-control" id="eisbn" name="isbn" placeholder="Enter book isbn" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="overdueFee">*Overdue fee per day</label>
+                                    <input type="number" class="form-control" id="eoverdueFee" name="overdueFee" placeholder="0.00" step="0.01" required aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-muted">Enter a valid decimal amount in dollar and cents no comma</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="publisher">*Publisher</label>
+                                    <input type="text" class="form-control" id="epublisher" name="publisher" placeholder="Enter publisher" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="datePublished">*Date Published</label>
+                                    <input type="date" class="form-control" id="edatePublished" name="datePublished"  required >
+                               </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Close</button>
+                <button type="reset" class="btn btn-outline-warning">Reset</button>
+                <button type="submit" class="btn btn-outline-primary">Edit Book</button>
+                </div>
+            </form>
+            </div>
+            </div>
+        </div>
+        <!-- Modal for delete book -->
+        <div class="modal fade" id="deleteBooksModal" tabindex="-1" role="dialog" aria-labelledby="deleteBooksModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="deleteBooksModalLabel">Delete Book<span>(Book ID)</span></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form id="deleteForm">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input type="text" hidden class="form-control" id="dbookId" name="bookId">
+                                  </div>
+                            </div>
+                        </div>
+                        <h4>Are you sure you want to delete the record?</h4>                        
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-outline-danger">Yes</button>
+                </div>
+            </form>
+            </div>
+            </div>
+        </div>
+    </main>
+ <footer class="footer">
+        <div id="footer-content">
+            <span class="text-muted">Anene Terefe</span>
+            <span style="float:right;" class="text-muted">&copy; April 2020</span>
+        </div>
+    </footer>    
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   </body>
+</html>
+    
