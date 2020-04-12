@@ -109,6 +109,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
+                <input type="text" hidden class="form-control" id="ebookId" name="ebookId">
                 <div class="modal-body">
                     <form id="editForm">
                         <div class="row">
@@ -177,7 +178,9 @@
                                   </div>
                             </div>
                         </div>
-                        <h4>Are you sure you want to delete the record?</h4>                        
+                        <h4>Are you sure you want to delete the record?</h4>  
+                        <input type="text" disabled  class="form-control" id="disbn"><br>
+                        <input type="text" disabled  class="form-control" id="dtitle">                    
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">No</button>

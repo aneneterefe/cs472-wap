@@ -96,20 +96,21 @@ $( document ).ready(function() {
     };
 
     // Populates the book list table with data
-    function bookList(data){$.get("https://elibraryrestapi.herokuapp.com/elibrary/api/book/list", function(data) {
+    function bookList(data){
+        $.get("https://elibraryrestapi.herokuapp.com/elibrary/api/book/list", function(data) {
                 let count=1;
                 $("#data").empty();
                 data.forEach(d => {
                     $(".loader").hide();
-                    $("#data").append("<tr>", 
-                            "<th scope='row'>"+count+" </td>",
-                            "<td>"+d.isbn+" </td>",
-                            "<td>"+d.title+" </td>",
-                            "<td>"+d.overdueFee+" </td>",
-                            "<td>"+d.publisher+" </td>",
-                            "<td>"+d.datePublished+" </td>",
-                            "<td><button type='button' class='btn btn-outline-warning' data-toggle='modal' data-target='#editBooksModal'>Edit</button></td>",
-                            "<td><button type='button' class='btn btn-outline-danger' data-toggle='modal' data-target='#deleteBooksModal'>Delete</button></td>",
+                    $("#data").append("<tr>"+ 
+                            "<th scope='row'>"+count+" </td>"+
+                            "<td>"+d.isbn+" </td>"+
+                            "<td>"+d.title+" </td>"+
+                            "<td>"+d.overdueFee+" </td>"+
+                            "<td>"+d.publisher+" </td>"+
+                            "<td>"+d.datePublished+" </td>"+
+                            "<td><button type='button' onclick='editModalFill()' class='btn btn-outline-warning' data-toggle='modal' data-target='#editBooksModal'>Edit</button></td>"+
+                            "<td><button type='button' onclick='deleteModalFill()' class='btn btn-outline-danger' data-toggle='modal' data-target='#deleteBooksModal'>Delete</button></td>"+
                             "</tr>"
                         );
                     count++;
@@ -144,11 +145,11 @@ $( document ).ready(function() {
                     $("#successalert").show();
                     $("#failalert").hide(); 
                     //clear data
-                    $("#isbn").val(""),
-                    $("#title").val(""),
-                    $("#overdueFee").val(""),
-                    $("#publisher").val(""),
-                    $('#datePublished').val("") 
+                    $("#isbn").val("");
+                    $("#title").val("");
+                    $("#overdueFee").val("");
+                    $("#publisher").val("");
+                    $('#datePublished').val(""); 
                     bookList(); 
                 }
             }). fail(function () {
@@ -160,18 +161,39 @@ $( document ).ready(function() {
 
 
     //--------------Edit Book
-    //edit Book
+    
     $("#editForm").submit(function(event){
-         
+        //put method ajax here
+        event.preventDefault();
+        $('#editBooksModal').modal('hide');// modal is embeded inside
     });
 
     //delete Book
     $("#deleteForm").submit(function(event){
-         
+        //delet method ajax here
+        event.preventDefault();
+        $('#editBooksModal').modal('hide');// modal is embeded inside
     });
 
 });
 
-    
+//edit Book Modal Fill 
+function editModalFill(bookId,isbn,title,overdueFee,publisher,datePublished){
+    alert("api url is not provided yet. Not working");
+    $("#ebookid").val(bookId);
+    $("#eisbn").val(isbn);
+    $("#etitle").val(title);
+    $("#eoverdueFee").val(overdueFee);
+    $("#epublisher").val(publisher);
+    $('#edatePublished').val(datePublished);
+}
+
+//delete Book Modal Fill 
+function deleteModalFill(bookId,isbn,title){
+    alert("api url is not provided yet. Not working");
+    $("#dbookId").val(bookId);
+    $("#disbn").val(isbn);
+    $("#dtitle").val(title);
+}
      
 
